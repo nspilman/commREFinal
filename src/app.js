@@ -51,7 +51,18 @@ class App extends Component {
     };
   }
 
-  async componentDidMount() {
+  componentDidMount() {
+    this.setAgent();
+  }
+
+  async setAgent() {
+
+    this.setState({
+      agentTotalSales: this.state.agentTotalSales - this.state.agentTotalSales,
+      agentLand: this.state.agentLand - this.state.agentLand,
+      agentOffice: this.state.agentOffice - this.state.agentOffice,
+      agentResidential: this.state.agentResidential - this.state.agentResidential,
+    });
     // AgentApi.data
     const url = "https://sheetdb.io/api/v1/ueshccmj9mar8";
     const response = await fetch(url);
@@ -88,7 +99,8 @@ class App extends Component {
       `${this.state.selectedAgent} residential Sales are`,
       this.state.agentResidential
     );
-  } //End of Async
+  }
+
   renameKey(obj, oldKey, newKey) {
     obj[newKey] = obj[oldKey];
     delete obj[oldKey];
@@ -143,25 +155,57 @@ class App extends Component {
     console.log(`Agent is now ${this.state.selectedAgent}`);
     //    this.setState({ agentLand: this.state.agentLand === 1})
     return (
-      //<Table />
-      <div
-        onClick={(e) => this.setState({ selectedAgent: e.target.innerText })}
-      >
-        Bob
-      </div>
+      //  <Table />
+      <table>
+        {/* <div
+        onClick={(e) => this.setState({ 
+            selectedAgent: e.target.innerText, 
+            agentTotalSales: this.state.agentTotalSales = this.state.agentTotalSales }, this.setAgent)}>
+        Steve
+      </div> */}
+        <div
+          onClick={(e) =>
+            this.setState(
+              {
+                selectedAgent: e.target.innerText,
+              },
+              this.setAgent
+            )
+          }
+        >
+          Steve
+        </div>
+        <div
+          onClick={(e) =>
+            this.setState(
+              {
+                selectedAgent: e.target.innerText,
+              },
+              this.setAgent
+            )
+          }
+        >
+          Bob
+        </div>
+        <div
+          onClick={(e) =>
+            this.setState(
+              {
+                selectedAgent: e.target.innerText,
+              },
+              this.setAgent
+            )
+          }
+        >
+          Jack
+        </div>
+      </table>
     );
   }
-  //  renderSelectedAgent(selectedAgent){
-
-  //     return <Agent />
-  // }
   render() {
     return (
       <React.Fragment>
-        <div className="App">
-          {this.renderAgentData()}
-          {/* {this.renderSelectedAgent(this.state.selectedAgent)} */}
-        </div>
+        <div className="App">{this.renderAgentData()}</div>
         <div className="Agent Chart">
           <h1>{this.state.selectedAgent}'s Chart </h1>
           <Chart

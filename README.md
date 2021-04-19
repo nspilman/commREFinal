@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-#Use NPM Start to run app after running NPM install to intall the dependencies
+#Use NPM Start to run app after running NPM install to install the dependencies
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

@@ -41,8 +41,8 @@ const pieOptions = {
 };
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       selectedAgent: "Steve",
       chartImageURI: "",
@@ -53,7 +53,6 @@ class App extends Component {
       stevesTotalSales: 0,
       bobsTotalSales: 0,
       jacksTotalSales: 0
-
     };
   }
 
@@ -62,7 +61,8 @@ class App extends Component {
   }
 
   async setAgent() {
-
+   //Resetting the state
+   //I tried use a method for this, but I could not find a way to reset everything except the default value for selected Agent, which is Steve
     this.setState({
       agentTotalSales: this.state.agentTotalSales - this.state.agentTotalSales,
       agentLand: this.state.agentLand - this.state.agentLand,

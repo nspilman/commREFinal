@@ -1,7 +1,15 @@
 # Getting Started with Create React App
 
-#Run NPM Install to install all dependencies
-#Run NPM Start to start application
+# Run NPM Install to install all dependencies
+
+# Run NPM Start to start application
+
+# If you want to manipulate the data then the google spreadsheet is located here:
+
+https://docs.google.com/spreadsheets/d/1DZ0wk_d0W3IuamT70_e-pFg0qD0GJ-OrArLBY6xVB70/edit?usp=sharing
+
+# When you change the data in the Google Spreadsheet, it will then change the data in the JSON endpoint and then render the correct data on the UI
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
